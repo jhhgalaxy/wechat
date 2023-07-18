@@ -1,0 +1,127 @@
+/**整体样式***********/
+body, h1, h2, h3, h4, h5, h6, hr, p, pre, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea {  margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {  font-size: 100%;}
+address, em, i, b { font-style: normal;}
+ul, li, ol { list-style: none outside none;}
+a { font-size:14px; text-decoration: none;}
+a:hover { text-decoration: none;}
+fieldset, img { border: 0 none;}
+button, input, select, textarea { font-size: 100%; outline: medium none;}
+table {   border-collapse: collapse; border-spacing: 0;}
+img { box-sizing: border-box;height: auto; max-width: 100%;  vertical-align: middle;}
+
+body { color: #333333; font-size:12px; background:white;font-family: PingFangSC-Regular, sans-serif;text-align:center;}
+/**整体样式***********/
+html,body{ height:100%}
+
+/* ==========================================================================
+   公共部分
+ ============================================================================ */
+.Underline{border-bottom: 1px solid #f4f4f4}/****下划线****/
+.reminder{ color:#bababa; font-size:12px; line-height:20px; padding:15px 0px}/****温馨提示****/
+.main_container{min-height: 440px;}
+.button_submit{ width:calc(60%); margin:15px auto}/****提交按钮****/
+.button_submit a{ display:block}/****提交按钮****/
+.button_submit img{width:100%;}/****提交按钮****/
+
+.headbar{ position:fixed; top:0;    z-index: 999; width:100%; height:32px; line-height:32px; color:#FFFFFF; font-size:14px;text-align:center;
+background-image: -moz-linear-gradient(top, #f9923c, #f15f28)!important; /* Firefox */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f9923c), color-stop(1, #f15f28))!important; /* Saf4+, Chrome */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9923c', endColorstr='#f15f28', GradientType='0')!important; /* IE8-IE9*/ 
+background: -ms-linear-gradient(top,#f9923c,#f15f28)!important; /* IE11*/ }
+.headbar span{ margin-right:10px}
+.headbar span img{ width:18px;}
+.foot_bg{ width:100%; padding:0px 0px 10px 0px;position: relative;bottom:0; }
+.foot_bg img{ width:calc(40%)}
+.fixed{ position:fixed; bottom:0}
+
+.whole_frame{ min-height:calc(100% - 95px)}
+.whole_personal{ min-height:calc(100% - 135px); padding-top:40px;}
+/* ==========================================================================
+   placeholder控制
+ ============================================================================ */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #cccccc; font-size: 15px;}
+input:-moz-placeholder, textarea:-moz-placeholder {color: #cccccc; font-size: 15px;}
+input::-moz-placeholder, textarea::-moz-placeholder {color: #cccccc; font-size: 15px;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder{color: #cccccc; font-size: 15px;}
+
+
+/* ==========================================================================
+   用户中心
+ ============================================================================ */
+
+.personal_column{width:calc(90%);margin:auto; overflow:visible; background-image: url(../images/user_bg_n.png);background-repeat: repeat-y;background-position: 0px 0px; background-size:1300px; }
+.personal_column li{ float:left;width:calc(50% - 1px); font-size:15px; color:#666666; text-align:center; line-height:1px}
+.personal_column li a{ font-size:14px; color:#666666}
+.personal_column li img{ width:400px; margin:0 15px 0 0}
+.personal_column_line{ width:1px; float:left}
+.personal_column_line img{width:1px;margin:12px 0 0 0;height: 150px;}
+
+
+
+.award{font-size:14px;padding: 10px 0 10px 0;}
+.award p{margin:5px auto;}
+
+.back{text-align:left; margin: 10px 0px 5px 10px;width:50%;}
+.back a img{width:calc(5%)}
+
+.b-line h3{float:left;margin:5px 5px}
+.b-line input{margin:5px 0px 0px 5px;vertical-align: text-bottom;}
+
+
+.business{width:calc(100% - 10px);margin:0px auto 0px auto;background-color:#FFFFFF;border-radius:10px; padding:0 0px 5px 10px;position: relative;}
+.business li{font-size:14px;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;padding:5px 0;text-align:left;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E8E8E8; line-height:50px;overflow: hidden; display: flex!important;}
+.business li:last-child{border-bottom:none;}
+.business li h3 { font-weight: normal; font-size: 14px; color: #999999;overflow: hidden; width:400px; float:left;}
+.business_input{border: none;height:50px;font-size:14px; width:100%; text-align:right; color:#333333;padding-right: 10px;}
+
+.form-control{display:block;width:100%;height:50px;font-size:14px;background-image:none; z-index:10;color:#333333; text-align:right; padding-right:10px;margin: 5px 0px 0px 5px;}
+.form-control span{color:#cccccc;}
+.aui-cells-arrow {position: absolute; top: 20px; right:0px; }
+.icon-arrow {background-image: url('../images/ico_arrow.png'); width:14px; height: 14px; display: block; background-size:14px}
+
+.radio{float:right;margin:3px 0px 3px 0px;width: calc(100% - 200px);padding-right: 20px;text-align: right;}
+.form input, .form label { vertical-align: middle; }
+.form label { margin-right: 6px; }
+.form_radio {
+    margin: 0 3px 0 0;/*与右侧文字的间距*/
+    padding: 0;
+    width: 13px;
+    height: 13px;
+    /*ie7 ie6 根据不同的 font-size 设置不同的值*/
+    vertical-align: text-bottom;
+}
+
+
+
+/*表格 */
+.product_table{min-height:150px;margin: 0 0 30px 0;}
+.recommend {width:100%;font-size: 14px;table-layout: fixed;=margin: 0 0 20px 0;background: white;}
+.recommend tr {width:100%;}
+.recommend tr th {width:100%;background-color: #e5e5e5;padding: 10px 2px 10px 2px;}
+.recommend tr td {width:100%;padding: 10px 2px 10px 2px;}
+.fund{margin:0 0 20px 0;}
+.article{margin: 30px auto;}
+
+th,td{ border:1px solid #a0a0a0; } 
+tr th:first-child{border-left:0; } 
+tr th:last-child {border-right:0; } 
+tr td:first-child{border-left:0; } 
+tr td:last-child {border-right:0; } 
+tr:first-child td,tr:first-child th{ border-top:0px; } 
+tr:last-child td{border-bottom:0px; } 
+
+.tick {width: calc(20%);}
+
+
+.success{margin: 50px 0 0 0;width:calc(100%)}
+.success img{max-width:calc(40%)}
+.success_text{font-size:20px;margin: 20px 0 0 0;}
+.desc{margin:10px 0 10px 0;}
+.qrcode{margin:5px 0 10px 0;width:calc(100%)}
+.qrcode img{max-width:calc(40%)} 
+
+
+.invisible{display:none;}
+
+.yanzhengma{width:60%;display: inline-block;padding: 6px 7.5px;font-size: 12px; border: none;background-color: #85c1f7;color: #fff;border-radius: 7.5px; margin: 5px 5px 5px 5px;}

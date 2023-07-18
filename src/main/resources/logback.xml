@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="WECHAT_MSG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/wechat.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>365</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>[%d{HH:mm:ss.SSS}] [%5level] [%thread] %logger{0} %msg%n</Pattern>
+			<charset>GBK</charset>
+		</encoder>
+	</appender>
+	
+	<root level="DEBUG">
+		<appender-ref ref="WECHAT_MSG" />
+	</root>
+</configuration>
