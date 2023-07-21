@@ -1,6 +1,8 @@
 package com.szcgc.wechat.controller;
 
-import com.szcgc.wechat.util.SignUtil;
+import com.szcgc.wechat.entity.TextMessage;
+import com.szcgc.wechat.util.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
@@ -16,9 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.szcgc.wechat.util.JsonUtil;
-import com.szcgc.wechat.util.MessageUtil;
 
 /**
  * 处理微信公众平台发过来的get、post请求；
@@ -37,7 +36,7 @@ public class WechatController {
         return "hello";
     }
 
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // signature 微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。
@@ -73,6 +72,21 @@ public class WechatController {
 
         // 回复数据包
         String resXml = MessageUtil.dealResponse(requestMap);
+
+        //手机号码查询
+        if(requestMap.get("MsgType").equals("text")){
+            String getContent = requestMap.get("Content");
+            if (CommonUtil.isMobile(getContent)) {
+                TextMessage tm;
+                if((getContent.charAt(6) - '0') % 2 == 0){
+                    tm = new TextMessage(requestMap, "经查询，电话号码" + getContent + "是本公司电话号码");
+                }
+                else {
+                    tm = new TextMessage(requestMap, "经查询，电话号码" + getContent + "不是本公司电话号码");
+                }
+                resXml = XMLUtil.msgToXml(tm);
+            }
+        }
         logger.info("WechatController doPost 回复的XML is" + resXml);
 
         PrintWriter out = response.getWriter();
